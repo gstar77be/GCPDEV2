@@ -1,9 +1,9 @@
 **FREE
 
 
-dcl-s #i    int(10);
+dcl-s #i    int(3);
 
-for #i = 100 to 200;
+for #i = 1 to 5;
     dsply %char(#j);
 endfor;
 
