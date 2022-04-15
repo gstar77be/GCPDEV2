@@ -1,10 +1,10 @@
 **FREE
 
 // change branch
-dcl-s #i    int(10);
+dcl-s #j    int(10);
 
-for #i = 1 to 5;
-    dsply %char(#i);
+for #j = 1 to 5;
+    dsply %char(#j);
 endfor;
 
 *inlr = *on;
