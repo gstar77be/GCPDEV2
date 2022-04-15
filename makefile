@@ -11,12 +11,12 @@ SHELL=/QOpenSys/usr/bin/qsh
 all: DEMO100R.rpgle
 
 %.rpgle:
-	system -s "CHGATR OBJ('./qrpglesrc/$*.sqlrpgle') ATR(*CCSID) VALUE(1252)"
+	system -s "CHGATR OBJ('qilesrc/$*.rpgle') ATR(*CCSID) VALUE(1252)"
 	liblist -a $(LIBLIST);\
-	system "CRTBNDRPG PGM($(BIN_LIB)/$* SRCSTMF('./qilesrc/$*.rpgle') REPLACE(*YES) OPTION(*EVENTF) DBGVIEW(*SOURCE)"
+	system "CRTBNDRPG PGM($(BIN_LIB)/$*) SRCSTMF('qilesrc/$*.rpgle') REPLACE(*YES) OPTION(*EVENTF) DBGVIEW(*SOURCE)"
 
 %.sqlrpgle:
-	system -s "CHGATR OBJ('./qrpglesrc/$*.sqlrpgle') ATR(*CCSID) VALUE(1252)"
+	system -s "CHGATR OBJ('./qilesrc/$*.sqlrpgle') ATR(*CCSID) VALUE(1252)"
 	liblist -a $(LIBLIST);\
 	system "CRTSQLRPGI OBJ($(BIN_LIB)/$*) SRCSTMF('./qilesrc/$*.sqlrpgle') COMMIT(*NONE) DBGVIEW(*SOURCE) OPTION(*EVENTF)"
 
